@@ -22,3 +22,4 @@ python3 blink_comparator.py [LeftImage] [RightImage]
 The two input parameters ```LeftImage``` and ```RightImage``` correspond to the two different astronomical images of the night sky taken at different times.
 
 ## Credits
+This script was created with the help of the following [guide](https://nostarch.com/real-world-python).
