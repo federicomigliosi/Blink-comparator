@@ -102,19 +102,6 @@ def blink(image_1, image_2, window_name, num_loops):
         cv.waitKey(330)
 
 def main():
-    """
-    #Create a sorted list with all the image paths inside folder night_1
-    night1_files = sorted(os.listdir('night_1'))
-
-    #Create a sorted list with all the image paths inside folder night_2
-    night2_files = sorted(os.listdir('night_2'))
-
-    #Assign a path to the input folders
-    #   cws() retrieves the path of the current directory
-    #   the operator / can join a path object with a string 
-    path1=Path.cwd() / 'night_1'
-    path2=Path.cwd() / 'night_2'"
-    """
     image_path1="1_bright_transient_left.png"
     image_path2="1_bright_transient_right.png"
 
