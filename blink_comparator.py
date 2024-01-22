@@ -101,15 +101,7 @@ def blink(image_1, image_2, window_name, num_loops):
         cv.imshow(window_name, image_2)
         cv.waitKey(330)
 
-def main():
-    image_path1="1_bright_transient_left.png"
-    image_path2="1_bright_transient_right.png"
-
-        #Load an image from night 1 (left) and from night 2 (right), as greyscale images
-        #   paths are converted to string for the imread() method
-        #   images are also converted to grayscale in order to work with only one channel (intensity)
-        #img1 = cv.imread(str(path1 / night1_files[i]), cv.IMREAD_GRAYSCALE)
-        #img2 = cv.imread(str(path2 / night2_files[i]), cv.IMREAD_GRAYSCALE)
+def main(image_path1,image_path2):
     img1 = cv.imread(image_path1, cv.IMREAD_GRAYSCALE)
     img2 = cv.imread(image_path2, cv.IMREAD_GRAYSCALE)
     #To keep track on what is going on we print a message indicating which files are being compared
@@ -151,10 +143,10 @@ def main():
 if( __name__ == '__main__'):
 
     parser = argparse.ArgumentParser(description='A Blink Comparator is an optical device used to rapidly alternate between two images of the same area of the sky, aiding in the detection of differences such as the presence of celestial objects that have changed or moved')
-    parser.add_argument('LeftImage', type=str, help='String path of the left image from the first night')
-    parser.add_argument('RightImage', type=str, help='String path of the right image from the second night')
+    parser.add_argument('LeftImage', type=str, help='String path of the first astronomical image')
+    parser.add_argument('RightImage', type=str, help='String path of the second astronomical image')
 
     args = parser.parse_args()
 
 
-    main()
+    main(args.LeftImage,args.RightImage)
